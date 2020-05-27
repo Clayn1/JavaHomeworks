@@ -8,16 +8,10 @@ import java.util.TreeSet;
 public class Schedule {
     private Set<Seance> seanceSet;
 
-    @Override
-    public String toString() {
-        return "Schedule{" +
-                "seanceSet=" + seanceSet +
-                '}';
-    }
-
     public Schedule() {
         this.seanceSet = new TreeSet<>();
     }
+
     public Schedule(Seance ...seances){
         this.seanceSet = new TreeSet<>();
         seanceSet.addAll(Arrays.asList(seances));
@@ -25,6 +19,13 @@ public class Schedule {
 
     public Set<Seance> getSeanceSet() {
         return seanceSet;
+    }
+
+    @Override
+    public String toString() {
+        return "Schedule{" +
+                "seanceSet=" + seanceSet +
+                '}';
     }
 
     public void addSeance(Seance seance){

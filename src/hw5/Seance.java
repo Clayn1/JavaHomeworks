@@ -51,20 +51,20 @@ public class Seance implements Comparable<Seance>{
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(movie, startTime, endTime);
-    }
-
-    private Time calculateEndTime() throws WrongTimeException {
-        return getStartTime().add(movie.getDuration());
-    }
-
-    @Override
     public String toString() {
         return "Seance: {" +
                 movie +
                 ", startTime: " + startTime +
                 ", endTime: " + endTime +
                 '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(movie, startTime, endTime);
+    }
+
+    private Time calculateEndTime() throws WrongTimeException {
+        return getStartTime().add(movie.getDuration());
     }
 }

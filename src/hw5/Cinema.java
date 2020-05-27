@@ -16,20 +16,6 @@ public class Cinema {
         this.close = close;
     }
 
-    @Override
-    public String toString() {
-        String s = "";
-        for (Days day : cinemaMap.keySet()) {
-            s += day.name() + ":\n";
-            for (Seance seance : cinemaMap.get(day).getSeanceSet()) {
-                s += seance + "\n";
-            }
-            s += "\n";
-        }
-        return "Cinema open:" + open +
-                ", close:" + close + "\n" + s;
-    }
-
     public Map<Days, Schedule> getCinemaMap() {
         return cinemaMap;
     }
@@ -48,6 +34,20 @@ public class Cinema {
 
     public Time getClose() {
         return close;
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+        for (Days day : cinemaMap.keySet()) {
+            s += day.name() + ":\n";
+            for (Seance seance : cinemaMap.get(day).getSeanceSet()) {
+                s += seance + "\n";
+            }
+            s += "\n";
+        }
+        return "Cinema open:" + open +
+                ", close:" + close + "\n" + s;
     }
 
     public void addSeance(String day, Seance... seances) {

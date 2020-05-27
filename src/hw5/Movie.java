@@ -6,13 +6,6 @@ public class Movie {
     private String title;
     private Time duration;
 
-    @Override
-    public String toString() {
-        return "Movie: " +
-                "'" + title + '\'' +
-                ", duration: " + duration;
-    }
-
     public Movie(String title, Time duration) {
         this.title = title;
         this.duration = duration;
@@ -32,6 +25,13 @@ public class Movie {
 
     public void setDuration(Time duration) {
         this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie: " +
+                "'" + title + '\'' +
+                ", duration: " + duration;
     }
 
     @Override
